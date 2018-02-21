@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Pan Cake Factory</title>
+
+
+<script type="text/javascript">
+	function calculateOrder() {
+
+		var simplePrice = 1.0;
+
+		//Using Variable for storing value. 
+		var numCake = document.getElementById("cake").value;
+
+		var thinCrust = document.getElementById("thinCrust");
+		var cheeseBurst = document.getElementById("cheeseBurst");
+		var doubleCheese = document.getElementById("doubleCheese");
+
+		//Example of type conversion of String to Number
+		var subTotal = numCake * simplePrice;
+
+		//Example of type conversion of Number to String
+		alert("Amount Payable is $" + subTotal);
+	}
+</script>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+</head>
+
+<body>
+	<h1>Pan Cake Factory</h1>
+	<form>
+		<div>
+			Name: <input type="text" id="name" value="" />
+		</div>
+		<br>
+		<div>
+			Quantity: <input type="text" id="cake" />
+		</div>
+		<br> <br>
+
+		<div>
+			<br> <input type="button" value="Calculate Amount"
+				onClick="calculateOrder()" />
+		</div>
+	</form>
+</body>
+</html>

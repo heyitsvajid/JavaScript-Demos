@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TA Selection</title>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+<script>
+	function User(firstname, lastname, sjsuid, sem, number_of_hours) {
+		var final_result = "You have successfully added your TA. Name of TA is "
+				+ firstname
+				+ " "
+				+ lastname
+				+ "("
+				+ sjsuid
+				+ ")."
+				+ " Student is in semester  "
+				+ sem
+				+ " and can work for "
+				+ number_of_hours + " hours";
+		document.getElementById("result").innerHTML = final_result;
+	}
+	function setDetails() {
+		var first_name = document.getElementById("first_name").value;
+		var last_name = document.getElementById("last_name").value;
+		var sjsu_id = document.getElementById("sjsu_id").value;
+		var sem = document.getElementById("semester").value;
+		var hours = document.getElementById("hours").value;
+		var ta_details = new User(first_name, last_name, sjsu_id, sem, hours);
+	}
+</script>
+</head>
+<body>
+	<h2>
+		Enter Name of Student you want to choose:
+		<h2>
+
+			First Name: <input type="text" id="first_name" /> <br /> Last Name: <input
+				type="text" id="last_name"> <br /> SJSU ID: <input
+				type="number" id="sjsu_id"> <br /> Semester: <input
+				type="number" id="semester"> <br /> Working hours: <input
+				type="number" id="hours"> <br />
+			<button id="button" onClick="setDetails()">Add</button>
+			<br /> <br /> <br />
+			<div id="result"></div>
+</body>
+</html>

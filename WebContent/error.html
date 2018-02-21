@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+
+	<h1>Enter Name and Desired Hours:</h1>
+	<form>
+		<div>
+			<h1>
+				Name : <input type="text" id="name" />
+		</div>
+		<div>
+			<h1>
+				Hours <input id="hour" type="text" placeholder="Between 1-5"
+					onchange="checkHours()">
+		</div>
+		<br>
+		<button type="button">Submit</button>
+		<p id="message"></p>
+	</form>
+	<script>
+		function checkHours() {
+			var message, x;
+			message = document.getElementById("message");
+			message.innerHTML = "";
+			x = document.getElementById("hour").value;
+
+			//Using try with catch to handle the errors thrown
+			//Using throw keyword for throwing the error
+			try {
+				if (x == "")
+					throw "empty";
+				if (isNaN(x))
+					throw "not a number";
+				x = Number(x);
+				if (x < 1)
+					throw "too low";
+				if (x > 5)
+					throw "too high";
+			} catch (err) {
+				message.innerHTML = "Hours " + err;
+			}
+		}
+	</script>
+</body>
+</html>

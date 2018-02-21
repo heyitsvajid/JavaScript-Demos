@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+
+<script type="text/javascript">
+	//Use of Regular Expression to Check Phone Format
+	var re = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}\1\d{4}/;
+	function validatePhone(phoneInput) {
+
+		var OK = re.exec(phoneInput.value);
+		if (!OK)
+			window.alert(phoneInput.value + ' isn\'t a correct format!');
+	}
+</script>
+</head>
+<body>
+	<h1>Enter Emergency Contact Info:</h1>
+
+	<form>
+		<div>
+			<h1>
+				Name : <input type="text" id="name" />
+		</div>
+
+		<h1>
+			Phone :<input id="phone" type="text" placeholder="###-###-####"
+				onchange="validatePhone(document.getElementById('phone'))"><br>
+
+			<button>Update</button>
+	</form>
+</body>
+</html>

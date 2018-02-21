@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+	<h2>CMPE273 Students Data</h2>
+	<button onclick="getData()">Get Data</button>
+	<p id="demo"></p>
+
+	<script>
+		function getData() {
+			var text = '{"students":['
+					+ '{"firstName":"Name","lastName":"Surname" },'
+					+ '{"firstName":"Vajid","lastName":"Kagdi" },'
+					+ '{"firstName":"Shrey","lastName":"Bhatt" },'
+					+ '{"firstName":"Pooja","lastName":"Patel" }]}';
+
+			//Parsing the JSON
+			obj = JSON.parse(text);
+
+			String
+			output = "";
+
+			for (i = 0; i < obj.students.length; i++) {
+				output = output + obj.students[i].firstName
+						+ "&nbsp&nbsp&nbsp " + obj.students[i].lastName
+						+ "<br><br>";
+
+			}
+			document.getElementById("demo").innerHTML = output;
+
+		}
+		//JSON Object:
+	</script>
+
+</body>
+</html>

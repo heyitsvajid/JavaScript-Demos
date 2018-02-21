@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Sandwich Work'z</title>
+
+<link rel="stylesheet" type="text/css" href="donuts.css" />
+
+<script type="text/javascript">
+	function updateOrder() {
+
+		//Using Constant for Tax Rate and  Sandwich Price 
+		const
+		TAX_RATE = 0.0925;
+		const
+		SANDWICHPRICE = 1.0;
+
+		//Using Variable for storing value. 
+		var numSandwich = document.getElementById("sandwich").value;
+		var subTotal = numSandwich * SANDWICHPRICE;
+		var tax = subTotal * TAX_RATE;
+
+		var finalAmount = subTotal + tax;
+		document.getElementById("subtotal").value = "$" + subTotal;
+		document.getElementById("tax").value = "$" + tax;
+		document.getElementById("total").value = "$" + finalAmount;
+	}
+</script>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+</head>
+
+<body>
+	<h1>Sandwich Work'z Sandwiches</h1>
+	<h2>Dollar each + Tax</h2>
+	<form>
+		<div>
+			Name: <input type="text" id="name" value="" />
+		</div>
+		<br>
+		<div>
+			Number of Cheese Sandwich: <input type="text" id="sandwich"
+				onchange="updateOrder();" />
+		</div>
+		<br>
+		<div>
+			Subtotal: <input type="text" id="subtotal" readonly="readonly" />
+		</div>
+		<br>
+		<div>
+			Tax: <input type="text" id="tax" readonly="readonly" />
+		</div>
+		<br>
+		<div>
+			Amount Payable: <input type="text" id="total" readonly="readonly" />
+		</div>
+		<div>
+			<br> <input type="button" value="Place Order" />
+		</div>
+	</form>
+</body>
+</html>

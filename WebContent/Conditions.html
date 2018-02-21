@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Pizza Hub</title>
+
+
+<script type="text/javascript">
+	function calculateOrder() {
+
+		var simplePizzaPrice = 1.0;
+
+		//Using Variable for storing value. 
+		var numPizza = document.getElementById("pizza").value;
+
+		var thinCrust = document.getElementById("thinCrust");
+		var cheeseBurst = document.getElementById("cheeseBurst");
+		var doubleCheese = document.getElementById("doubleCheese");
+
+		if (thinCrust.checked == true) {
+			simplePizzaPrice = simplePizzaPrice + 1;
+		}
+		if (cheeseBurst.checked == true) {
+			simplePizzaPrice = simplePizzaPrice + 1;
+		}
+		if (doubleCheese.checked == true) {
+			simplePizzaPrice = simplePizzaPrice + 1;
+		}
+
+		var subTotal = numPizza * simplePizzaPrice;
+		document.getElementById("total").value = "$" + subTotal;
+	}
+</script>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+</head>
+
+<body>
+	<h1>Pizza Hub</h1>
+	<h2>Dollar each + Toppings Extra</h2>
+	<form>
+		<div>
+			Name: <input type="text" id="name" value="" />
+		</div>
+		<br>
+		<div>
+			Quantity: <input type="text" id="pizza" />
+		</div>
+		<br>
+		<div>
+			Thin Crust: <input type="checkbox" id="thinCrust">
+		</div>
+		<br>
+
+		<div>
+			Double Cheese: <input type="checkbox" id="doubleCheese" />
+		</div>
+		<br>
+
+		<div>
+			Cheese Burst: <input type="checkbox" id="cheeseBurst" />
+		</div>
+		<br>
+		<div>
+			Amount Payable: <input type="text" id="total" readonly="readonly" />
+		</div>
+		<div>
+			<br> <input type="button" value="Calculate Amount"
+				onClick="calculateOrder()" />
+		</div>
+	</form>
+</body>
+</html>

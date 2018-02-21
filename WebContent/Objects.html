@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Schedule For CMPE273</title>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+<script type="text/javascript">
+	// Lecture object constructor
+	function Lecture(topic, date, description) {
+		this.topic = topic;
+		this.date = date;
+		this.description = description;
+	}
+	// Array of Lecture entries and adding lecture objects to show together on screen.
+	var lecture = [
+			new Lecture("TOPIC", "DATE", "DESCRIPTION"),
+
+			new Lecture("Node JS", "02/14/2018",
+					"Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine"),
+			new Lecture(
+					"Angular JS",
+					"02/21/2018",
+					"AngularJS is a JavaScript-based open-source front-end web application framework mainly maintained by Google"),
+			new Lecture(
+					"MongoDB",
+					"02/28/2018",
+					"MongoDB is a free and open-source cross-platform document-oriented database program."),
+			new Lecture(
+					"Express",
+					"02/06/2018",
+					"Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software.") ];
+
+	// Show Lecture entries
+	function showLecture() {
+
+		// Show the lecture entries
+		var i = 0, lectureText = "";
+		while (i < lecture.length) {
+
+			if (i % 2 == 0)
+				lectureText += "<p style='background-color:#EEEEEE'>";
+			else
+				lectureText += "<p>";
+
+			// Generate the formatted lecture HTML code
+			lectureText += "<strong>" + lecture[i].date
+					+ "</strong> &nbsp &nbsp" + lecture[i].topic
+					+ "&nbsp &nbsp" + lecture[i].description + "</p>";
+			i++;
+		}
+		// Set the lecture HTML code on the page
+		document.getElementById("lecture").innerHTML = lectureText;
+	}
+</script>
+</head>
+<body onload="showLecture()">
+	<h1>Lecture Details for CMPE273</h1>
+	<div id="lecture"></div>
+</body>
+</html>

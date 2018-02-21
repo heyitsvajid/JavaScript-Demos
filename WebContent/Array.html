@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+
+<script type="text/javascript">
+	function sortNames() {
+
+		var names = document.getElementById("name").value;
+		var nameArray = names.split(" ");
+
+		nameArray.sort();
+		var display = document.getElementById("sortedNames");
+		var output = "";
+		for (i = 0; i < nameArray.length; i++) {
+			output = output + "<br/> Enroll No. " + (i + 1) + " = "
+					+ nameArray[i];
+		}
+		display.innerHTML = output;
+	}
+</script>
+</head>
+<body>
+	<h1>Enter Names Of Student Separated With Space:</h1>
+
+	<form>
+		<div>
+			<h1>
+				Name : <input type="text" id="name" />
+		</div>
+		<input type="button" onclick="sortNames();" value="Sort" />
+		<div id="sortedNames"></div>
+
+	</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Property Dealer</title>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+<script type="text/javascript">
+	function validateNumber(value) {
+		// Validate the number
+		if (isNaN(value))
+			alert("Please enter a valid Salary");
+	}
+
+	function calcPrice() {
+		var maxPrice = document.getElementById("income").value * 4;
+		alert("You can afford a house up to $" + maxPrice + ".");
+	}
+</script>
+</head>
+
+<body>
+	<div>
+		<h1>Get an Affordable House</h1>
+		<div>
+			<h2>Your annual income:</h2>
+			<input id="income" type="text" size="12" required=""
+				onblur="validateNumber(this.value);" />
+		</div>
+		<br>
+		<div>
+
+			<h2>Number of bedrooms required:</h2>
+			<input id="bedrooms" type="text" required="" size="12"
+				onchange="validateNumber(this.value);" />
+		</div>
+		<br> <input type="button" value="Calculate Price"
+			onclick="calcPrice();" />
+		</form>
+	</div>
+</body>
+</html>

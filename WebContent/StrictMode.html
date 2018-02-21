@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Strict Mode Testing</title>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+<script>
+	function nonStrictConcat() {
+		document.getElementById("result").innerHTML = "";
+		first_name = document.getElementById("first_name").value;
+		last_name = document.getElementById("last_name").value;
+		document.getElementById("result").innerHTML = "Name is " + first_name
+				+ " " + last_name;
+	}
+
+	function nonStrictReverse() {
+		document.getElementById("result").innerHTML = "";
+		first_name = document.getElementById("first_name").value;
+		last_name = document.getElementById("last_name").value;
+		document.getElementById("result").innerHTML = "Name is " + last_name
+				+ " " + first_name;
+	}
+	function strictConcat() {
+		"use strict";
+		document.getElementById("result").innerHTML = "";
+		first_name = document.getElementById("first_name").value;
+		last_name = document.getElementById("last_name").value;
+		document.getElementById("result").innerHTML = "Name is " + first_name
+				+ " " + last_name;
+	}
+
+	function strictReverse() {
+		"use strict";
+		document.getElementById("result").innerHTML = "";
+		first_name = document.getElementById("first_name").value;
+		last_name = document.getElementById("last_name").value;
+		document.getElementById("result").innerHTML = "Name is " + last_name
+				+ " " + first_name;
+	}
+</script>
+</head>
+<body>
+	<h2>Student Name</h2>
+	First Name:
+	<input type="text" id="first_name" /> Last Name:
+	<input type="text" id="last_name" />
+	<br />
+	<br />
+	<button id="button" onClick="nonStrictConcat()">Non Strict
+		Concatenate</button>
+	<br />
+	<br />
+	<button id="button" onClick="nonStrictReverse()">Non Strict
+		Reverse</button>
+	<br />
+	<br />
+	<button id="button" onClick="strictConcat()">Strict
+		Concatenate</button>
+	<br />
+	<br />
+	<button id="button" onClick="strictReverse()">Strict Reverse</button>
+	<br />
+	<br />
+	<div id="result"></div>
+</body>
+</html>

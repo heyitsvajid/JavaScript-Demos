@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
+<script type="text/javascript">
+	function calculate() {
+		var start = new Date(document.getElementById("start").value);
+		var end = new Date(document.getElementById("end").value);
+
+		var ONEDAY = 1000 * 60 * 60 * 24;
+
+		var date1_ms = start.getTime();
+		var date2_ms = end.getTime();
+
+		var difference_ms = Math.abs(date1_ms - date2_ms);
+
+		document.getElementById("daysCount").innerHTML = " Number of days between selected dates are "
+				+ Math.round(difference_ms / ONEDAY);
+	}
+</script>
+</head>
+<body>
+
+	<h1>Please select Start and End Date</h1>
+	<form>
+
+		<div>
+			<label><h1>
+					Start Date <input required="" type="date" id="start"></label>
+		</div>
+
+		<div>
+			<label><h1>
+					End Date <input required="" type="date" id="end"></label>
+		</div>
+
+		<div>
+			<input type="button" value="Calculate Days" onclick="calculate();">
+		</div>
+		<br>
+		<div id="daysCount"></div>
+	</form>
+</body>
+</html>
