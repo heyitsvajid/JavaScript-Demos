@@ -1,6 +1,6 @@
-# JavaScriptRefresherAssignment
+# JavaScript Refresher Assignment
 
-Contains demo programs for following # JavaScript topics:
+Contains demo programs for following **JavaScript** topics:
 
 1. Variables
 2. Objects
